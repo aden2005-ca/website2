@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+}
+a{
+    color: black;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    transform: translateX(-100%);
+    transition: transform 300ms ease;
+    z-index: 1000;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.2);
+}
+.overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease;
+    z-index: 900;
+}
+
+.sidebar nav ul {
+    padding: 20px;
+}
+.sidebar nav ul li {
+    margin-bottom: 16px;
+}
+.sidebar nav ul li a {
+    color: #333;
+    font-size: 1rem;
+    text-decoration: none;
+}
+.sidebar nav ul li a:hover {
+    color: #000;
+}
+body.menu-open .sidebar {
+    transform: translateX(0);
+}
+  
+  .overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease;
+    z-index: 900;
+}
+  
+
+  body.menu-open .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+.main-header{
+    height: 140px;
+    padding-top:30px;
+    padding-bottom: 12px;
+    background-color: #ffc107;
+}
+
+.section{
+    max-width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.main-header .section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.top.header-child{
+    height: 55%;
+    display: flex;
+    justify-content: space-between;
+}
+.bottom.header-child{
+    height: 40%;
+    border: 1px solid black;
+    width: 70%;
+    display: flex;
+}
+.menu-logo{
+    display: flex;
+    column-gap: 24px;
+}
+.logo h3{
+    font-weight: 400;
+}
+.logo p{
+    width: max-content;
+    margin-left: auto;
+    margin-top: -6px;
+    font-size: 8px;
+    font-weight: 600;
+}
+.menu{
+    padding-top: 8px;
+    height: max-content;
+}
+.menu i{
+    font-size: 20px;
+}
+.header-icons{
+    padding-top: 4px;
+    display: flex;
+    column-gap: 24px;
+}
+.header-icons i{
+    font-size: 30px;
+}
+#search-bar{
+    width: 80%;
+    height: 100%;
+    padding-left: 12px;
+}
+#search-btn{
+    width: 20%;
+    height: 100%;
+    background-color: #000000;
+    color: #ffffff;
+}
+/*gotten from chatGPT , i used this to give my icon a transparent background but preserve the borders*/
+.fa-bag-shopping.outline,
+.fa-bag-shopping.outline::before {
+  /* make the fill transparent */
+  -webkit-text-fill-color: transparent;
+  /* draw a 1px stroke in the current text color */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: currentColor;
+}
+
+
+.shop-highlights{
+    height: 480px;
+    padding: 0 100px;
+    background-color: pink;
+}
+.highlights{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.highlight-text{
+    height: 60%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    height: max-content;
+}
+.highlight-text h3{
+    font-size: calc(1.3rem + .6vw);
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+.highlight-text h3:first-child{
+    font-weight: 400;
+}
+.highlight-image img{
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+.shop-now{
+    display: block;
+    width: 140px;
+    height: 40px;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.category-showcase{
+    margin-bottom: 60px;
+}
+.category-showcase .section{
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+}
+
+.showcase-card{
+    width: 48%;
+    display: flex;
+    background-color: lightblue;
+    padding: 4px 8px;
+}
+.showcase-card:nth-of-type(2){
+    background-color: pink;
+}
+.showcase-card-image{
+    width: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.showcase-card-image:nth-of-type(1){
+    background-image: url(assets/samsung_phone-removebg-preview.png);
+}
+.showcase-card:nth-of-type(2) .showcase-card-image{
+    background-image: url(assets/headphones2-removebg-preview.png);
+}
+.showcase-card-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 16px;
+}
+.showcase-card-text h3{
+    font-size: calc(1.3rem + .6vw);
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.showcase-card-text p{
+    text-transform: uppercase;
+    color: grey;
+
+}
+.showcase-card .shop-now{
+    background-color: transparent;
+    color: #000000;
+}
+.showcase-card .shop-now:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.product-showcase .title{
+    font-weight: 500;
+    text-align: center;
+    position: relative;
+}
+
+.product-showcase .title::before, .product-showcase .title::after{
+    content: "";
+    position: absolute;
+    width: calc((100% - 320px) / 2);
+    height: 2px;
+    background-color: grey;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.product-showcase .title::before{
+    left: 0;
+}
+
+.product-showcase .title::after{
+    right: 0;
+    margin-left: 14px;
+}
+
+.product-showcase-cards{
+    padding-top: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.product-showcase-card{
+    width: 18%;
+}
+.product-showcase-card .image{
+    background-color: grey;
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    aspect-ratio: 1/1.2;
+}
+.product-showcase-card:nth-of-type(1) .image {
+    background-image: url(assets/watch-removebg-preview.png);
+}
+.product-showcase-card:nth-of-type(2) .image {
+    background-image: url(assets/headphone-1.png);
+}
+.product-showcase-card:nth-of-type(3) .image {
+    background-image: url(assets/headphones2-removebg-preview.png);
+}
+.product-showcase-card:nth-of-type(4) .image {
+    background-image: url(assets/pouch-removebg-preview.png);
+}
+.product-showcase-card:nth-of-type(5) .image {
+    background-image: url(assets/samsung_phone-removebg-preview.png);
+}
+.product-showcase-card .top{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+}
+.product-showcase-card .icon-holder{
+    align-self: center;
+}
+.product-showcase-card .cat{
+    font-size: 12px;
+    color: grey;
+}
+.product-showcase-card .name{
+    font-size: 16px;
+    font-weight: 500;
+}
+.product-showcase-card .rating{
+    margin-top: 10px;
+    font-size: 10px;
+}
+.product-showcase-card .prices{
+    display: flex;
+    column-gap: 6px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+.old-price{
+    text-decoration: line-through;
+    color: grey;
+}
+.benefits{
+    height: 260px;
+    margin-top: 60px;
+}
+.benefits .section{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.benefit-card{
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #efefef;
+    text-align: center;
+    row-gap: 12px;
+}
+.benefit-card h3{
+    font-weight: 400;
+}
+.benefit-card p{
+    color: grey;
+}
+.brands{
+    display: flex;
+    justify-content: space-between;
+}
+.brand-card{
+    background-color: #efefef;
+    height: 60px;
+    width: 16%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.site-footer {
+    margin-top: 60px;
+    background: #222;
+    color: #eee;
+    padding: 40px 20px 20px;
+    font-family: sans-serif;
+}
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #555;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+.footer-section p,
+.footer-section ul,
+.footer-section .tag-cloud {
+    margin: 8px 0;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li {
+    margin: 6px 0;
+}
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+}
+.footer-section a:hover {
+    color: #fff;
+}
+.tag-cloud a {
+    display: inline-block;
+    margin: 4px 6px 4px 0;
+    padding: 4px 8px;
+    background: #444;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+.tag-cloud a:hover {
+    background: #555;
+}
+.newsletter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+.newsletter-form button {
+    padding: 8px 16px;
+    border: none;
+    background: #e91e63;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+.newsletter-form button:hover {
+    background: #d81b60;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+    color: #777;
+}
+
+@media (max-width:1025px) {
+    .product-showcase-card:nth-of-type(1){
+        display: none;
+    }
+    .product-showcase-card{
+        width: 24%;
+    }
+    .details, .details .name{
+        font-size: 12px;
+    }
+    .details .cat{
+        font-size: 10px;
+    }
+    .benefits{
+        height: 200px;
+    }
+    .benefit-card{
+        font-size: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .bottom.header-child{
+        width: 100%;
+    }
+    .highlights{
+        position: relative;
+    }
+    .highlights .highlight-text{
+        position: relative;
+        z-index: 5;
+    }
+    .highlights .highlight-image{
+        position: absolute;
+        top: 80px;
+        right: 0;
+        direction: rtl;
+        z-index: 0;
+    }
+    .highlights .highlight-image img{
+        width: 60%;
+        min-width: 310px;
+    }
+    .category-showcase .section{
+        height: auto;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .showcase-card{
+        width: 100%;
+        padding: 20px 8px;
+    }
+    .brand-card:nth-of-type(3) .img{
+        width: 20px;
+    }
+}
+
+@media (max-width:600px) {
+    .highlights .highlight-image{
+        right: -20%;
+    }
+    .product-showcase-card:nth-of-type(2){
+        display: none;
+    }
+    .product-showcase-card{
+        width: 31%;
+    }
+}
+
+@media (max-width:490px) {
+    .product-showcase-cards{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .product-showcase-card{
+        width: 100%;
+    }
+    .benefits{
+        height: auto;
+    }
+    .benefit-card{
+        width: 100%;
+        padding: 12px 0;
+    }
+    .benefits .section{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .header-icons i{
+        font-size: 16px;
+    }
+}
+
+@media (max-width:470px) {
+    .highlights .highlight-image{
+        right: -140px;
+    }
+}
